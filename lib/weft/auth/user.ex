@@ -2,7 +2,6 @@ defmodule Weft.Auth.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "users" do
     field(:email, :string)
     field(:username, :string)
@@ -23,10 +22,11 @@ defmodule Weft.Auth.User do
   end
 
   defp put_password_hash(
-    %Ecto.Changeset{
-      valid?: true, changes: %{password: password}
-    } = changeset
-  ) do
+         %Ecto.Changeset{
+           valid?: true,
+           changes: %{password: password}
+         } = changeset
+       ) do
     change(changeset, password_hash: Bcrypt.hash_pwd_salt(password))
   end
 

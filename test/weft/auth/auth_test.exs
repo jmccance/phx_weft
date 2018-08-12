@@ -9,7 +9,7 @@ defmodule Weft.AuthTest do
     @valid_attrs %{
       email: "foo@old.baz",
       username: "foo",
-      password: "some password",
+      password: "some password"
     }
     @update_attrs %{
       email: "foo@new.baz",

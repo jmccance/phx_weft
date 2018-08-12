@@ -25,13 +25,13 @@ defmodule WeftWeb.ChannelCase do
     end
   end
 
-
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Weft.Repo)
+
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Weft.Repo, {:shared, self()})
     end
+
     :ok
   end
-
 end

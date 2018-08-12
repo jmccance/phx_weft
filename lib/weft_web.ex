@@ -28,8 +28,9 @@ defmodule WeftWeb do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/weft_web/templates",
-                        namespace: WeftWeb
+      use Phoenix.View,
+        root: "lib/weft_web/templates",
+        namespace: WeftWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]

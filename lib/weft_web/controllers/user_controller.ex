@@ -4,7 +4,7 @@ defmodule WeftWeb.UserController do
   alias Weft.Auth
   alias Weft.Auth.User
 
-  action_fallback WeftWeb.FallbackController
+  action_fallback(WeftWeb.FallbackController)
 
   def index(conn, _params) do
     users = Auth.list_users()
@@ -35,6 +35,7 @@ defmodule WeftWeb.UserController do
 
   def delete(conn, %{"id" => id}) do
     user = Auth.get_user!(id)
+
     with {:ok, %User{}} <- Auth.delete_user(user) do
       send_resp(conn, :no_content, "")
     end

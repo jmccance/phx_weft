@@ -19,5 +19,5 @@ config :weft, Weft.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :bcrypt_elixir,
-  :log_rounds,
-  4
+       :log_rounds,
+       4

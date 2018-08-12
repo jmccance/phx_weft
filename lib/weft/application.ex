@@ -11,7 +11,7 @@ defmodule Weft.Application do
       # Start the Ecto repository
       supervisor(Weft.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(WeftWeb.Endpoint, []),
+      supervisor(WeftWeb.Endpoint, [])
       # Start your own worker by calling: Weft.Worker.start_link(arg1, arg2, arg3)
       # worker(Weft.Worker, [arg1, arg2, arg3]),
     ]
