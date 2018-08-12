@@ -15,6 +15,6 @@ defmodule WeftWeb.FallbackController do
   def call(conn, {:error, :not_found}) do
     conn
     |> put_status(:not_found)
-    |> render(WeftWeb.ErrorView, :"404")
+    |> render(WeftWeb.ErrorView, :"404", [])
   end
 end
