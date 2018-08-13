@@ -4,12 +4,18 @@ defmodule WeftWeb.UserControllerTest do
   alias Weft.Auth
   alias Weft.Auth.User
 
-  @create_attrs %{email: "some email", password: "some password", username: "some username"}
+  @create_attrs %{
+    email: "some email",
+    password: "some password",
+    username: "some username"
+  }
+
   @update_attrs %{
     email: "some updated email",
     password: "some updated password",
     username: "some updated username"
   }
+
   @invalid_attrs %{email: nil, password: nil, username: nil}
 
   def fixture(:user) do
@@ -51,7 +57,8 @@ defmodule WeftWeb.UserControllerTest do
   describe "update user" do
     setup [:create_user]
 
-    test "renders user when data is valid", %{conn: conn, user: %User{id: id} = user} do
+    test "renders user when data is valid",
+         %{conn: conn, user: %User{id: id} = user} do
       conn = put(conn, user_path(conn, :update, user), user: @update_attrs)
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 
