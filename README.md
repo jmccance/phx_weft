@@ -1,5 +1,54 @@
 # Weft
 
+Initial experimentation with Elixir and Phoenix. A toy API that allows users to create plaintext posts.
+
+## Sample Usage
+
+Create a new user:
+
+```
+POST /api/users
+Content-Type: application/json
+
+{
+  "username": "cooldude70",
+  "email": "cooldude70@hotmail.com",
+  "password": "5w0rdf!5h"
+}
+```
+
+"Login" as that user:
+
+```
+POST /api/login
+Content-Type: application/json
+
+{
+  "username": "cooldude70"
+}
+```
+
+Make a post:
+
+```
+POST /api/posts
+Content-Type: application/json
+Cookie: {the cookie returned from the login call}
+
+
+{
+  "content": "Hello, Weft!"
+}
+```
+
+Check out your timeline:
+
+```
+GET /api/users/:your_user_id/posts
+```
+
+---
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
